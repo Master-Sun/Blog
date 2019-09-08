@@ -34,3 +34,4 @@ class Topic(models.Model):
     class Meta:
         # 自定义表名
         db_table = 'topic'
+

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'user',
     'btoken',  # 同于登陆时生成token，token好像是关键字，使用btoken
     'topic',
+    'message',
 ]
 
 MIDDLEWARE = [
@@ -118,7 +119,9 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+# 设置成True后，存入数据库的所有时间都会转为utc时间(方便查询时时区转换)
+# 应用不跨时区时直接设置为False即可
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -164,5 +167,7 @@ APPEND_SLASH = False    # 是否自动在url末尾添加/
 # 前端请求资源的路径
 MEDIA_URL = '/media/'
 # 后端服务器图片的存储目录
-MEDIA_ROOT = os.path.join(BASE_DIR, ',media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+
 

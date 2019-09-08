@@ -24,6 +24,7 @@ urlpatterns = [
     # 同于登陆操作，生成token，token好像是关键字，使用btoken
     url(r'v1/token', include('btoken.urls')),
     url(r'v1/topics', include('topic.urls')),
+    url(r'v1/messages', include('message.urls')),
 ]
 
 from django.conf.urls.static import static
